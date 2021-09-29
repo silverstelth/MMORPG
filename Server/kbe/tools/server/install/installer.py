@@ -385,6 +385,8 @@ def _checkKBEEnvironment(is_get_error):
 	
 	if ";" in KBE_RES_PATH:
 		paths = KBE_RES_PATH.split(";")
+	elif platform.system() == 'Windows':
+		paths.append(KBE_RES_PATH)
 	else:
 		paths = KBE_RES_PATH.split(":")
 	
